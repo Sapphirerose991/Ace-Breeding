@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    background-color: #FDF5E6; 
+    color: #000000;          
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;        
+    line-height: 1.8em;
+    margin: 0;
+    padding: 0;
+}
+
+
+#title-wrapper {
+    text-align: center;
+    padding: 60px 0 40px 0;
+}
+
+.headline {
+    display: flex;
+    align-items: center;    /* 垂直居中对齐 */
+    justify-content: center; /* 水平居中对齐 */
+    gap: 15px;              /* logo 和文字之间的间距 */
+    font-size: 3.5em;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.title-logo {
+    height: 120px;  
+    width: auto;   
+    object-fit: contain;
+}
+
+
+.ace-text {
+    color: #E63946;
+}
+
+.breeding-text {
+    color: #DAA520; 
+}
+
+
+#main-wrapper {
+    max-width: 900px; 
+    margin: auto;
+    background: rgba(255, 255, 255, 0.4); 
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* 栏目样式 */
+h3 {
+    font-size: 1.4em;
+    border-bottom: 2px solid;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding-right: 20px;
+}
+
+.red { color: #E63946; border-color: #E63946; }
+.green { color: #2A9D8F; border-color: #2A9D8F; }
+.yellow { color: #DAA520; font-weight: 600; }
+
+.two-columns {
+    display: flex;
+    gap: 40px; 
+    margin-top: 30px;
+}
+
+.left {
+    flex: 1;
+}
+
+.one-column {
+    margin-top: 40px;
+    padding: 20px;
+    background: #fff;
+    border-left: 5px solid #DAA520;
+    border-radius: 4px;
+}
+
+
+li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+li::before {
+    content: "🐎 "; 
+}
+
+#footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 80px;
+    padding-bottom: 40px;
+}
+
+#p5-canvas-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    border: 3px solid #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+#breeding-tool {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.input-group > * {
+    flex: 1 1 auto; /* 允许组件根据内容伸缩 */
+    min-width: 120px; /* 设置一个保底宽度 */
+}
+.input-group input, .input-group select, .input-group button {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.input-group button {
+    background-color: #E63946;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+/* 去掉链接默认样式，继承原本的颜色 */
+.tool-link {
+    text-decoration: none; 
+    display: inline-block;
+    transition: transform 0.2s ease; /* 增加一个微小的动画效果 */
+}
+
+.tool-link:hover {
+    transform: translateX(10px);
+}
+
+.tool-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.tool-section:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+.input-group select {
+    min-width: 180px; /* 根据文字长度调整这个数值 */
+    width: auto;      /* 让它根据内容自动微调 */
+    padding-right: 25px; /* 给右侧的小箭头留出空间，防止压到文字 */
+}
