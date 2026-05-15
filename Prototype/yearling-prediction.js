@@ -14,10 +14,10 @@ function yearlingRecommendations() {
 
     // 模拟 5 匹马的数据
     const yearlings = [
-        { dam: "Urban Sea", year: 2025, country: "Ireland", surface: "Turf" },
-        { dam: "Kind", year: 2025, country: "UK", surface: "Turf" },
-        { dam: "Miyoshi", year: 2025, country: "Japan", surface: "Dirt/Turf" },
-        { dam: "Zenyatta", year: 2025, country: "USA", surface: "Dirt" },
+        { dam: "Miss Daisy", year: 2025, country: "Ireland", surface: "Turf" },
+        { dam: "Crossing Star", year: 2025, country: "UK", surface: "Turf" },
+        { dam: "March Lorrine", year: 2025, country: "Japan", surface: "Dirt/Turf" },
+        { dam: "War Like Goddess", year: 2025, country: "USA", surface: "Dirt" },
         { dam: "Winx", year: 2025, country: "Australia", surface: "Turf" }
     ];
 
