@@ -2,6 +2,10 @@
 
 body {
     background-color: #FDF5E6; 
+    background-image: 
+        linear-gradient(rgba(218, 165, 32, 0.04) 1px, transparent 5px),
+        linear-gradient(90deg, rgba(218, 165, 32, 0.04) 1px, transparent 5px);
+    background-size: 100px 100px;
     color: #000000;          
     font-family: 'Poppins', sans-serif;
     font-size: 15px;        
@@ -168,3 +172,4 @@ canvas {
     width: auto;      /* 让它根据内容自动微调 */
     padding-right: 25px; /* 给右侧的小箭头留出空间，防止压到文字 */
 }
+
