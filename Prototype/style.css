@@ -8,12 +8,93 @@ body {
     background-size: 100px 100px;
     color: #000000;          
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;        
+    font-size: 18px;        
     line-height: 1.8em;
     margin: 0;
     padding: 0;
 }
 
+#banner-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; /* 两端对齐 */
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;          /* 增加上下间距 */
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+
+/* 右侧文字区整体微调 */
+.banner-intro {
+    flex: 1;
+    max-width: 400px; /* 稍微加宽一点，让 slogan 折行更好看 */
+    text-align: left;
+    padding-left: 40px; /* 与左侧图片拉开舒适的视觉距离 */
+    margin-top: 40px;
+}
+
+/* 新增：Slogan 专属美化样式 */
+.slogan-text {
+    margin: 50px auto;  
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #2A9D8F;       /* 保持好看的青绿色 */
+    text-align: center;   /* 强制让它在屏幕正中央对齐 */
+    margin: 20px auto 0 auto; /* 距离上方 Ace Breeding 标题 20px */
+    max-width: 800px;     /* 限制宽度，防止长句子在一行里拉得过长 */
+    font-style: italic;   /* 优雅的倾斜体 */
+}
+
+/* 原有的 Introduction 标题微调 */
+.banner-intro h3.red {
+    font-size: 25px;
+    margin-top: 10;
+    margin-bottom: 12px;
+}
+
+/* 右侧图片区 */
+.banner-img-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;    /* 让图片在右侧区域居中 */
+}
+
+.main-banner {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;          /* 控制插画尺寸不要过大 */
+}
+
+/* 手机端适配：屏幕变小时自动变成上下排列 */
+@media (max-width: 768px) {
+    #banner-wrapper {
+        flex-direction: column-reverse; /* 手机端图片在上，文字在下 */
+        text-align: center;
+        padding: 0 20px;
+    }
+    .banner-intro {
+        max-width: 100%;
+        padding-right: 0;
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+/* 移动端适配：如果屏幕太小，取消浮动，让它老老实实排在下面 */
+@media (max-width: 768px) {
+    .banner-intro {
+        position: static;
+        transform: none;
+        max-width: 90%;
+        margin: 20px auto;
+        background: transparent;
+        box-shadow: none;
+        text-align: center;
+    }
+}
 
 #title-wrapper {
     text-align: center;
@@ -172,4 +253,14 @@ canvas {
     width: auto;      /* 让它根据内容自动微调 */
     padding-right: 25px; /* 给右侧的小箭头留出空间，防止压到文字 */
 }
+.service-banner-box {
+    width: 100%;
+    margin-bottom: 0px; /* 让图片和下面的 Service Introduction 标题留出间距 */
+    text-align: center;   
+}
 
+.service-banner {
+    max-width: 100%;     /* 保证图片不超过容器宽度 */
+    height: auto;        /* 等比例缩放 */
+    display: block;
+}

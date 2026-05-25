@@ -6,11 +6,8 @@
 <head>
     <title>Ace Breeding Prototype</title>
 
-    <!-- allow special characters, including Arabic, Chinese, Korean, Japanese, etc. -->
     <meta charset="UTF-8">
-    <!-- link the style sheet -->
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- import p5.js library -->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
     <script>
         // prevent scrolling when spacebar and arrow keys are pressed.
@@ -19,26 +16,34 @@
 </head>
 
 <body>
-    <!-- title -->
     <div id="title-wrapper">
         <h1 class="headline">
             <img src="logo.png" alt="Ace Breeding Logo" class="title-logo">
             <span class="ace-text">Ace</span> <span class="breeding-text">Breeding</span>
         </h1>
+        <h2 class="slogan-text">
+            “We optimize thoroughbred breeding and improve sustainability, start from UAE and to the world.”
+        </h2>
     </div>
 
-    <!-- main content is followed -->
+    <div id="banner-wrapper">
+        <div class="banner-img-box">
+            <img src="titlepage.png" alt="Ace Breeding Banner" class="main-banner">
+        </div>
+
+        <div class="banner-intro">
+            <h3 class="red">Introduction</h3>
+            <p>Ace Breeding is an AI-motivated start-up project, aiming at predicting future performances of
+                thoroughbred horses using machine learning, saving the time and efforts required to breed or find a
+                true good horse.</p>
+        </div>
+    </div>
+
     <div id="main-wrapper">
         <div id="p5-canvas-container">
-            <!-- This is where your p5 sketch will be appended and appear! -->
         </div>
         <div class="two-columns">
             <div class="left">
-                <h3 class="red">Introduction</h3>
-                <p>Ace Breeding is an AI-motivated start-up project, aiming at predicting future performances of
-                    thoroghbred horses using machine learning, saving the time and efforts required to breed or find a
-                    true good horse. </p>
-
                 <h3 class="red">Our Service includes:</h3>
                 <p>Stallion Matching: Based on your mare's characteristics and your expected price, find the most
                     suitable stallion.</p>
@@ -65,11 +70,11 @@
                     <a href="yearling-prediction.html" class="tool-link">
                         <h3 class="yellow">Yearling Performance Prediction (Prototype) ➔</h3>
                     </a>
-                </div> 
-
+                </div>
 
                 <h3 class="green">Charging:</h3>
-                <p>Stallion Matcing Report fee: $20 per report and $50 for premium reports containing detailed pedigree upto 9
+                <p>Stallion Matcing Report fee: $20 per report and $50 for premium reports containing detailed pedigree
+                    upto 9
                     generations.</p>
                 <p>Breeding Prediction fee: 0.1% of the total yearly breeding fee.</p>
                 <p>Contract of Yearling Performance: charging each predicted stake winner 0.5% of their prize money.</p>
@@ -85,15 +90,10 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <div id="footer" class="black">
         <p>Spring 2026</p>
     </div>
 
-    </div>
-
-    <!-- Include your sketch.js file here -->
-    <!--<script src="sketch.js" type="text/javascript"> </script>-!>
 </body>
 
 </html>
