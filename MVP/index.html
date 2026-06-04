@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<head>
+    <title>Ace Breeding Prototype</title>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+    <script>
+        // prevent scrolling when spacebar and arrow keys are pressed.
+        window.addEventListener("keydown", function (e) { if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) { e.preventDefault(); } }, false);
+    </script>
+</head>
+
+<body>
+    <div id="title-wrapper">
+        <h1 class="headline">
+            <img src="logo.png" alt="Ace Breeding Logo" class="title-logo">
+            <span class="ace-text">Ace</span> <span class="breeding-text">Breeding</span>
+        </h1>
+        <h2 class="slogan-text">
+            “We optimize thoroughbred breeding and improve sustainability, start from UAE and to the world.”
+        </h2>
+    </div>
+
+    <div id="banner-wrapper">
+        <div class="banner-img-box">
+            <img src="titlepage.png" alt="Ace Breeding Banner" class="main-banner">
+        </div>
+
+        <div class="banner-intro">
+            <h3 class="red">Introduction</h3>
+            <p>Ace Breeding is an AI-motivated start-up project, aiming at predicting future performances of
+                thoroughbred horses using machine learning, saving the time and efforts required to breed or find a
+                true good horse.</p>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+        <div id="p5-canvas-container">
+        </div>
+        <div class="two-columns">
+            <div class="left">
+                <h3 class="red">Our Service includes:</h3>
+                <p>Stallion Matching: Based on your mare's characteristics and your expected price, find the most
+                    suitable stallion.</p>
+                <p>Breeding Prediction: For new stallions, we help predict their breeding characteristics and suitable
+                    mares.
+                </p>
+                <p>Yearling Prediction: For yearlings, we predict their future performances and give suggestions to
+                    auction buyers.</p>
+
+                <div class="tool-section">
+                    <a href="yearling_prediction.html" class="tool-link">
+                        <h3 class="yellow">Yearling Performance Prediction (MVP) ➔</h3>
+                    </a>
+                </div>
+                <div class="tool-section">
+                    <a href="stallion_matcher.html" class="tool-link">
+                        <h3 class="green">Stallion Matcher for Mares (Prototype) ➔</h3>
+                    </a>
+                </div>
+
+                <div class="tool-section">
+                    <a href="breeding_prediction.html" class="tool-link">
+                        <h3 class="green" style="color: #2A9D8F; border-color: #2A9D8F;">Breeding Prediction for New
+                            Stallions (Prototype) ➔</h3>
+                    </a>
+                </div>
+
+
+
+                <h3 class="green">Charging:</h3>
+                <p>Stallion Matcing Report fee: $20 per report and $50 for premium reports containing detailed pedigree
+                    upto 9
+                    generations.</p>
+                <p>Breeding Prediction fee: 0.1% of the total yearly breeding fee.</p>
+                <p>Contract of Yearling Performance: charging each predicted stake winner 0.5% of their prize money.</p>
+            </div>
+        </div>
+        <div class="one-column">
+            <span class="yellow">What we hope to bring?</span>
+            <ul>
+                <li>Best breeding result for every mare</li>
+                <li>Save the time to find nicks for stallions</li>
+                <li>Help buyers find the most suitable yearlings under budget</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="footer" class="black">
+        <p>Spring 2026</p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,1002 @@
+[
+  {
+    "Lot": 1,
+    "Sire": "Snitzel (AUS)",
+    "Dam": "Yesterjoy (AUS)",
+    "Dam Sire": "More Than Ready",
+    "Price": 500000,
+    "Buyer": "David Ellis CNZM/Te Akau Racing, NEW ZEALAND $500,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_1_photo.jpg",
+    "Price_Display": "$500,000"
+  },
+  {
+    "Lot": 2,
+    "Sire": "Hitotsu (AUS)",
+    "Dam": "Yours But Mine (AUS)",
+    "Dam Sire": "Choisir",
+    "Price": 100000,
+    "Buyer": "Passed In $100,000 - Reserve $120,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_2_photo.jpg",
+    "Price_Display": "$100,000"
+  },
+  {
+    "Lot": 3,
+    "Sire": "Home Affairs (AUS)",
+    "Dam": "Yumi (AUS)",
+    "Dam Sire": "Lonhro",
+    "Price": 300000,
+    "Buyer": "International Thoroughbred Solutions (FBAA), NSW $300,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_3_photo.jpg",
+    "Price_Display": "$300,000"
+  },
+  {
+    "Lot": 4,
+    "Sire": "Russian Revolution (AUS)",
+    "Dam": "Za Zi Ba (AUS)",
+    "Dam Sire": "All Too Hard",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_4_photo.png",
+    "Price_Display": null
+  },
+  {
+    "Lot": 5,
+    "Sire": "So You Think (NZ)",
+    "Dam": "Zastava (AUS)",
+    "Dam Sire": "Encosta de Lago",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_5_photo.png",
+    "Price_Display": null
+  },
+  {
+    "Lot": 6,
+    "Sire": "Wild Ruler (AUS)",
+    "Dam": "Zavance (AUS)",
+    "Dam Sire": "Reliable Man",
+    "Price": 200000,
+    "Buyer": "Gai Waterhouse & Adrian Bott/Kestrel Thoroughbreds, NSW $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_6_photo.jpg",
+    "Price_Display": "$200,000"
+  },
+  {
+    "Lot": 7,
+    "Sire": "Pierata (AUS)",
+    "Dam": "Zeftabrook (AUS)",
+    "Dam Sire": "Hinchinbrook",
+    "Price": 110000,
+    "Buyer": "Jiandao Zhang, CHINA $110,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_7_photo.jpg",
+    "Price_Display": "$110,000"
+  },
+  {
+    "Lot": 8,
+    "Sire": "Hitotsu (AUS)",
+    "Dam": "Zelrosa (AUS)",
+    "Dam Sire": "Zoustar",
+    "Price": 70000,
+    "Buyer": "Matthew Dunn/Neil Jenkinson Pty Ltd (FBAA), NSW $70,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_8_photo.jpg",
+    "Price_Display": "$70,000"
+  },
+  {
+    "Lot": 9,
+    "Sire": "So You Think (NZ)",
+    "Dam": "Zenon (AUS)",
+    "Dam Sire": "Galileo",
+    "Price": 140000,
+    "Buyer": "Griffiths Racing, VIC $140,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_9_photo.jpg",
+    "Price_Display": "$140,000"
+  },
+  {
+    "Lot": 10,
+    "Sire": "Ole Kirk (AUS)",
+    "Dam": "Zestily (AUS)",
+    "Dam Sire": "Snitzel",
+    "Price": 400000,
+    "Buyer": "Michael Freedman Racing/Andrew Williams Bloodstock (FBAA), NSW $400,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_10_photo.jpg",
+    "Price_Display": "$400,000"
+  },
+  {
+    "Lot": 11,
+    "Sire": "Snitzel (AUS)",
+    "Dam": "Zighy Bay (USA)",
+    "Dam Sire": "Tapit",
+    "Price": 470000,
+    "Buyer": "Kia Ora Stud, NSW $470,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_11_photo.jpg",
+    "Price_Display": "$470,000"
+  },
+  {
+    "Lot": 12,
+    "Sire": "Harry Angel (IRE)",
+    "Dam": "Zorro Rapido (AUS)",
+    "Dam Sire": "Foxwedge",
+    "Price": 120000,
+    "Buyer": "Portelli Racing, NSW $120,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_12_photo.jpg",
+    "Price_Display": "$120,000"
+  },
+  {
+    "Lot": 13,
+    "Sire": "Farnan (AUS)",
+    "Dam": "Zoumagic (AUS)",
+    "Dam Sire": "Zoustar",
+    "Price": 120000,
+    "Buyer": "Snowden Racing Pty Ltd, NSW $120,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_13_photo.jpg",
+    "Price_Display": "$120,000"
+  },
+  {
+    "Lot": 14,
+    "Sire": "Written Tycoon (AUS)",
+    "Dam": "Zoupino (AUS)",
+    "Dam Sire": "Zoustar",
+    "Price": 300000,
+    "Buyer": "Mick Price Racing & Breeding Pty Ltd, VIC $300,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_14_photo.jpg",
+    "Price_Display": "$300,000"
+  },
+  {
+    "Lot": 15,
+    "Sire": "Trapeze Artist (AUS)",
+    "Dam": "A Lot More Love (AUS)",
+    "Dam Sire": "Sebring",
+    "Price": 200000,
+    "Buyer": "Lizzie Jelfs, NSW $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_15_photo.jpg",
+    "Price_Display": "$200,000"
+  },
+  {
+    "Lot": 16,
+    "Sire": "Snitzel (AUS)",
+    "Dam": "Abbey Road (AUS)",
+    "Dam Sire": "Street Cry",
+    "Price": 300000,
+    "Buyer": "Gollan Racing Fillies Partnership/John Foote Bloodstock (FBAA), QLD $300,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_16_photo.jpg",
+    "Price_Display": "$300,000"
+  },
+  {
+    "Lot": 17,
+    "Sire": "Home Affairs (AUS)",
+    "Dam": "Abeyance (NZ)",
+    "Dam Sire": "Reliable Man",
+    "Price": 120000,
+    "Buyer": "Shailer Racing/The Standard Market Company, QLD $120,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_17_photo.jpg",
+    "Price_Display": "$120,000"
+  },
+  {
+    "Lot": 18,
+    "Sire": "Extreme Choice (AUS)",
+    "Dam": "Absolut Glam (AUS)",
+    "Dam Sire": "Snowland",
+    "Price": 430000,
+    "Buyer": "Archibald Racing Pty Ltd/William Johnson Bloodstock (FBAA), NSW $430,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_18_photo.jpg",
+    "Price_Display": "$430,000"
+  },
+  {
+    "Lot": 19,
+    "Sire": "Justify (USA)",
+    "Dam": "Abyssinie (IRE)",
+    "Dam Sire": "Danehill Dancer",
+    "Price": 400000,
+    "Buyer": "Tom Magnier, NSW $400,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_19_photo.jpg",
+    "Price_Display": "$400,000"
+  },
+  {
+    "Lot": 20,
+    "Sire": "Written Tycoon (AUS)",
+    "Dam": "Acing Shamrock (AUS)",
+    "Dam Sire": "Fastnet Rock",
+    "Price": 330000,
+    "Buyer": "Roll The Dice Racing/Rogers Bloodstock, VIC $330,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_20_photo.jpg",
+    "Price_Display": "$330,000"
+  },
+  {
+    "Lot": 21,
+    "Sire": "Super Seth (AUS)",
+    "Dam": "Acting (NZ)",
+    "Dam Sire": "Savabeel",
+    "Price": 420000,
+    "Buyer": "Mick Price Racing & Breeding Pty Ltd/MyRacehorse Pty Ltd/Belmont Bloodstock Agency (FBAA), VIC $420,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_21_photo.jpg",
+    "Price_Display": "$420,000"
+  },
+  {
+    "Lot": 22,
+    "Sire": "Starspangledbanner (AUS)",
+    "Dam": "Ad Merajj (FR)",
+    "Dam Sire": "Invincible Spirit",
+    "Price": 240000,
+    "Buyer": "Star Thoroughbreds/Vin Cox Bloodstock, NSW $240,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_22_photo.jpg",
+    "Price_Display": "$240,000"
+  },
+  {
+    "Lot": 23,
+    "Sire": "Brave Smash (JPN)",
+    "Dam": "Adament (AUS)",
+    "Dam Sire": "Real Impact",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_23_photo.jpg",
+    "Price_Display": null
+  },
+  {
+    "Lot": 24,
+    "Sire": "All Too Hard (AUS)",
+    "Dam": "Adelie (AUS)",
+    "Dam Sire": "Adelaide",
+    "Price": 50000,
+    "Buyer": "Dullingham Pty Ltd, QLD $50,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_24_photo.jpg",
+    "Price_Display": "$50,000"
+  },
+  {
+    "Lot": 25,
+    "Sire": "Spirit of Boom (AUS)",
+    "Dam": "Adio (AUS)",
+    "Dam Sire": "Lonhro",
+    "Price": 150000,
+    "Buyer": "Gollan Racing Pty Ltd/Strong Bloodstock/John Foote Bloodstock (FBAA), QLD $150,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_25_photo.jpg",
+    "Price_Display": "$150,000"
+  },
+  {
+    "Lot": 26,
+    "Sire": "Hellbent (AUS)",
+    "Dam": "Aesop's Fable (AUS)",
+    "Dam Sire": "Encosta de Lago",
+    "Price": 180000,
+    "Buyer": "BBA Ireland, IRELAND $180,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_26_photo.jpg",
+    "Price_Display": "$180,000"
+  },
+  {
+    "Lot": 27,
+    "Sire": "Farnan (AUS)",
+    "Dam": "Afiado (AUS)",
+    "Dam Sire": "Deep Field",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_27_photo.jpg",
+    "Price_Display": null
+  },
+  {
+    "Lot": 28,
+    "Sire": "Hellbent (AUS)",
+    "Dam": "Agueda (AUS)",
+    "Dam Sire": "General Nediym",
+    "Price": 260000,
+    "Buyer": "George Moore Bloodstock, HONG KONG $260,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_28_photo.jpg",
+    "Price_Display": "$260,000"
+  },
+  {
+    "Lot": 29,
+    "Sire": "Stay Inside (AUS)",
+    "Dam": "Aim for Perfection (AUS)",
+    "Dam Sire": "Smart Missile",
+    "Price": 140000,
+    "Buyer": "Australian Bloodstock, NSW $140,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_29_photo.jpg",
+    "Price_Display": "$140,000"
+  },
+  {
+    "Lot": 30,
+    "Sire": "Capitalist (AUS)",
+    "Dam": "Air to Air (AUS)",
+    "Dam Sire": "Smart Missile",
+    "Price": 100000,
+    "Buyer": "Blueblood Thoroughbreds/SP Bloodstock/Tony & Calvin McEvoy, NSW $100,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_30_photo.jpg",
+    "Price_Display": "$100,000"
+  },
+  {
+    "Lot": 31,
+    "Sire": "Satono Aladdin (JPN)",
+    "Dam": "Ajaayeb (AUS)",
+    "Dam Sire": "Street Cry",
+    "Price": 260000,
+    "Buyer": "Star Thoroughbreds/Vin Cox Bloodstock, NSW $260,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_31_photo.jpg",
+    "Price_Display": "$260,000"
+  },
+  {
+    "Lot": 32,
+    "Sire": "Profondo (AUS)",
+    "Dam": "Akela Belle (NZ)",
+    "Dam Sire": "Mastercraftsman",
+    "Price": 150000,
+    "Buyer": "Gai Waterhouse & Adrian Bott/Kestrel Thoroughbreds, NSW $150,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_32_photo.jpg",
+    "Price_Display": "$150,000"
+  },
+  {
+    "Lot": 33,
+    "Sire": "Lope de Vega (IRE)",
+    "Dam": "Al Haan (GB)",
+    "Dam Sire": "Street Cry",
+    "Price": 70000,
+    "Buyer": "Passed In $70,000 - Reserve $80,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_33_photo.jpg",
+    "Price_Display": "$70,000"
+  },
+  {
+    "Lot": 34,
+    "Sire": "Hitotsu (AUS)",
+    "Dam": "Al Jasrah (IRE)",
+    "Dam Sire": "Invincible Spirit",
+    "Price": 200000,
+    "Buyer": "Griffiths Racing, VIC $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_34_photo.jpg",
+    "Price_Display": "$200,000"
+  },
+  {
+    "Lot": 35,
+    "Sire": "I Am Invincible (AUS)",
+    "Dam": "Alassio (AUS)",
+    "Dam Sire": "Exceed And Excel",
+    "Price": 950000,
+    "Buyer": "Ciaron Maher Bloodstock/David Redvers Bloodstock, VIC $950,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_35_photo.jpg",
+    "Price_Display": "$950,000"
+  },
+  {
+    "Lot": 36,
+    "Sire": "So You Think (NZ)",
+    "Dam": "Alighted (AUS)",
+    "Dam Sire": "Smart Missile",
+    "Price": 130000,
+    "Buyer": "Bradley McGinty, WA $130,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_36_photo.jpg",
+    "Price_Display": "$130,000"
+  },
+  {
+    "Lot": 37,
+    "Sire": "I Am Invincible (AUS)",
+    "Dam": "All Banter (AUS)",
+    "Dam Sire": "I Am Invincible",
+    "Price": 250000,
+    "Buyer": "Anthony Freedman Racing/Julian Blaxland Bloodstock (FBAA)/Badgers Bloodstock, VIC $250,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_37_photo.jpg",
+    "Price_Display": "$250,000"
+  },
+  {
+    "Lot": 38,
+    "Sire": "The Autumn Sun (AUS)",
+    "Dam": "All That Is (AUS)",
+    "Dam Sire": "So You Think",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_38_photo.jpg",
+    "Price_Display": null
+  },
+  {
+    "Lot": 39,
+    "Sire": "Farnan (AUS)",
+    "Dam": "All That Sass (AUS)",
+    "Dam Sire": "Hinchinbrook",
+    "Price": 300000,
+    "Buyer": "Moody Racing Pty Ltd, VIC $300,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_39_photo.jpg",
+    "Price_Display": "$300,000"
+  },
+  {
+    "Lot": 40,
+    "Sire": "Ole Kirk (AUS)",
+    "Dam": "Allez Wonder (AUS)",
+    "Dam Sire": "Redoute's Choice",
+    "Price": 170000,
+    "Buyer": "Slade Bloodstock, VIC $170,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_40_photo.jpg",
+    "Price_Display": "$170,000"
+  },
+  {
+    "Lot": 41,
+    "Sire": "Castelvecchio (AUS)",
+    "Dam": "Almandine (JPN)",
+    "Dam Sire": "Galileo",
+    "Price": 60000,
+    "Buyer": "Passed In $60,000 - Reserve $80,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_41_photo.jpg",
+    "Price_Display": "$60,000"
+  },
+  {
+    "Lot": 42,
+    "Sire": "Pierro (AUS)",
+    "Dam": "Almashooqa (AUS)",
+    "Dam Sire": "Bernardini",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_42_photo.png",
+    "Price_Display": null
+  },
+  {
+    "Lot": 43,
+    "Sire": "Pierata (AUS)",
+    "Dam": "Alotapride (AUS)",
+    "Dam Sire": "Al Maher",
+    "Price": 40000,
+    "Buyer": "Madtanee Wannart, THAILAND $40,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_43_photo.jpg",
+    "Price_Display": "$40,000"
+  },
+  {
+    "Lot": 44,
+    "Sire": "Home Affairs (AUS)",
+    "Dam": "Alriyah (AUS)",
+    "Dam Sire": "Street Cry",
+    "Price": 475000,
+    "Buyer": "Archibald Racing Pty Ltd/William Johnson Bloodstock (FBAA), NSW $475,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_44_photo.jpg",
+    "Price_Display": "$475,000"
+  },
+  {
+    "Lot": 45,
+    "Sire": "I Am Invincible (AUS)",
+    "Dam": "Always Inthe Munny (USA)",
+    "Dam Sire": "Munnings",
+    "Price": 475000,
+    "Buyer": "Richard & Will Freedman, NSW $475,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_45_photo.jpg",
+    "Price_Display": "$475,000"
+  },
+  {
+    "Lot": 46,
+    "Sire": "Pinatubo (IRE)",
+    "Dam": "Always on My Mind (AUS)",
+    "Dam Sire": "Fastnet Rock",
+    "Price": 220000,
+    "Buyer": "Paul Willetts/Platinum Breeding & Racing, NSW $220,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_46_photo.jpg",
+    "Price_Display": "$220,000"
+  },
+  {
+    "Lot": 47,
+    "Sire": "Toronado (IRE)",
+    "Dam": "Alyssum (AUS)",
+    "Dam Sire": "Street Cry",
+    "Price": 150000,
+    "Buyer": "Monarch Racing/Catheryne Bruggeman/Paul Moroney Bloodstock, NSW $150,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_47_photo.jpg",
+    "Price_Display": "$150,000"
+  },
+  {
+    "Lot": 48,
+    "Sire": "So You Think (NZ)",
+    "Dam": "Amelia's Dream (AUS)",
+    "Dam Sire": "Redoute's Choice",
+    "Price": 250000,
+    "Buyer": "Springy's Prestige Racing/Kearney Racing, NSW $250,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_48_photo.jpg",
+    "Price_Display": "$250,000"
+  },
+  {
+    "Lot": 49,
+    "Sire": "So You Think (NZ)",
+    "Dam": "Ana's Mail (AUS)",
+    "Dam Sire": "Anabaa",
+    "Price": 80000,
+    "Buyer": "Danny O'Brien Racing, VIC $80,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_49_photo.jpg",
+    "Price_Display": "$80,000"
+  },
+  {
+    "Lot": 50,
+    "Sire": "Brave Smash (JPN)",
+    "Dam": "Anabaa's Legacy (NZ)",
+    "Dam Sire": "Anabaa",
+    "Price": 120000,
+    "Buyer": "Ciaron Maher Bloodstock/Import Racing/SP Bloodstock, VIC $120,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_50_photo.jpg",
+    "Price_Display": "$120,000"
+  },
+  {
+    "Lot": 51,
+    "Sire": "Frankel (GB)",
+    "Dam": "Anabasis (GER)",
+    "Dam Sire": "High Chaparral",
+    "Price": 300000,
+    "Buyer": "Harvey Black, QLD $300,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_51_photo.jpg",
+    "Price_Display": "$300,000"
+  },
+  {
+    "Lot": 52,
+    "Sire": "Anamoe (AUS)",
+    "Dam": "Anaheed (AUS)",
+    "Dam Sire": "Fastnet Rock",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_52_photo.png",
+    "Price_Display": null
+  },
+  {
+    "Lot": 53,
+    "Sire": "Stay Inside (AUS)",
+    "Dam": "Anatola (AUS)",
+    "Dam Sire": "More Than Ready",
+    "Price": 200000,
+    "Buyer": "Stephen Marsh Racing/Dylan Johnson Bloodstock, NEW ZEALAND $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_53_photo.jpg",
+    "Price_Display": "$200,000"
+  },
+  {
+    "Lot": 54,
+    "Sire": "Bivouac (AUS)",
+    "Dam": "Angasi (AUS)",
+    "Dam Sire": "Street Boss",
+    "Price": 200000,
+    "Buyer": "James Harron Bloodstock Colt Partnership/Tony Fung Colts, NSW $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_54_photo.jpg",
+    "Price_Display": "$200,000"
+  },
+  {
+    "Lot": 55,
+    "Sire": "Pierro (AUS)",
+    "Dam": "Angel Helena (AUS)",
+    "Dam Sire": "More Than Ready",
+    "Price": 90000,
+    "Buyer": "David Ellis CNZM/Fortuna Racing, NEW ZEALAND $90,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_55_photo.jpg",
+    "Price_Display": "$90,000"
+  },
+  {
+    "Lot": 56,
+    "Sire": "Wootton Bassett (GB)",
+    "Dam": "Angel Rock (AUS)",
+    "Dam Sire": "Rock of Gibraltar",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_56_photo.jpg",
+    "Price_Display": null
+  },
+  {
+    "Lot": 57,
+    "Sire": "Better Than Ready (AUS)",
+    "Dam": "Angharad (AUS)",
+    "Dam Sire": "Exceed And Excel",
+    "Price": 130000,
+    "Buyer": "Gollan Racing Pty Ltd/John Foote Bloodstock (FBAA)/Archer Park Racing, QLD $130,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_57_photo.jpg",
+    "Price_Display": "$130,000"
+  },
+  {
+    "Lot": 58,
+    "Sire": "Ole Kirk (AUS)",
+    "Dam": "Antelope (AUS)",
+    "Dam Sire": "Not a Single Doubt",
+    "Price": 550000,
+    "Buyer": "James Harron Bloodstock Colt Partnership/Tony Fung Colts, NSW $550,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_58_photo.jpg",
+    "Price_Display": "$550,000"
+  },
+  {
+    "Lot": 59,
+    "Sire": "Frankel (GB)",
+    "Dam": "Antibes (AUS)",
+    "Dam Sire": "Galileo",
+    "Price": 2000000,
+    "Buyer": "Tom Magnier, NSW $2,000,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_59_photo.jpg",
+    "Price_Display": "$2,000,000"
+  },
+  {
+    "Lot": 60,
+    "Sire": "Bivouac (AUS)",
+    "Dam": "Any Day Will Do (AUS)",
+    "Dam Sire": "Any Given Saturday",
+    "Price": 130000,
+    "Buyer": "Passed In $130,000 - Reserve $150,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_60_photo.jpg",
+    "Price_Display": "$130,000"
+  },
+  {
+    "Lot": 61,
+    "Sire": "Pinatubo (IRE)",
+    "Dam": "Apologynotaccepted (USA)",
+    "Dam Sire": "Fusaichi Pegasus",
+    "Price": 230000,
+    "Buyer": "Justin Warwick, WA $230,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_61_photo.jpg",
+    "Price_Display": "$230,000"
+  },
+  {
+    "Lot": 62,
+    "Sire": "Exceed and Excel (AUS)",
+    "Dam": "Appealing (AUS)",
+    "Dam Sire": "Street Cry",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_62_photo.png",
+    "Price_Display": null
+  },
+  {
+    "Lot": 63,
+    "Sire": "Home Affairs (AUS)",
+    "Dam": "Appian Way (AUS)",
+    "Dam Sire": "Exceed And Excel",
+    "Price": 180000,
+    "Buyer": "Triple Crown Syndications, NSW $180,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_63_photo.jpg",
+    "Price_Display": "$180,000"
+  },
+  {
+    "Lot": 64,
+    "Sire": "In the Congo (AUS)",
+    "Dam": "Apple Bay (AUS)",
+    "Dam Sire": "Exceed And Excel",
+    "Price": 45000,
+    "Buyer": "Passed In $45,000 - Reserve $60,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_64_photo.jpg",
+    "Price_Display": "$45,000"
+  },
+  {
+    "Lot": 65,
+    "Sire": "Hellbent (AUS)",
+    "Dam": "Aquamosa (NZ)",
+    "Dam Sire": "Alamosa",
+    "Price": 225000,
+    "Buyer": "Bennett Racing Pty Ltd, VIC $225,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_65_photo.jpg",
+    "Price_Display": "$225,000"
+  },
+  {
+    "Lot": 66,
+    "Sire": "Stay Inside (AUS)",
+    "Dam": "Arianne (NZ)",
+    "Dam Sire": "Zabeel",
+    "Price": 270000,
+    "Buyer": "Dalziel Bloodstock/Moody Racing Pty Ltd, VIC $270,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_66_photo.jpg",
+    "Price_Display": "$270,000"
+  },
+  {
+    "Lot": 67,
+    "Sire": "Cosmic Force (AUS)",
+    "Dam": "Arson Annie (AUS)",
+    "Dam Sire": "Redoute's Choice",
+    "Price": 60000,
+    "Buyer": "Paul Willetts/Robert Heathcote, QLD $60,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_67_photo.jpg",
+    "Price_Display": "$60,000"
+  },
+  {
+    "Lot": 68,
+    "Sire": "Siyouni (FR)",
+    "Dam": "Aryaaf (AUS)",
+    "Dam Sire": "Epaulette",
+    "Price": 200000,
+    "Buyer": "Gollan Racing Pty Ltd/Archer Park Racing, QLD $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_68_photo.jpg",
+    "Price_Display": "$200,000"
+  },
+  {
+    "Lot": 69,
+    "Sire": "Spirit of Boom (AUS)",
+    "Dam": "Ashra Jahre (AUS)",
+    "Dam Sire": "Headwater",
+    "Price": 200000,
+    "Buyer": "Ciaron Maher Bloodstock/David Redvers Bloodstock, UNITED KINGDOM $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_69_photo.jpg",
+    "Price_Display": "$200,000"
+  },
+  {
+    "Lot": 70,
+    "Sire": "Best of Bordeaux (AUS)",
+    "Dam": "Astara (NZ)",
+    "Dam Sire": "Dalghar",
+    "Price": 100000,
+    "Buyer": "Anthony Freedman Racing/Julian Blaxland Bloodstock (FBAA), VIC $100,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_70_photo.jpg",
+    "Price_Display": "$100,000"
+  },
+  {
+    "Lot": 71,
+    "Sire": "Jacquinot (AUS)",
+    "Dam": "Asteria (AUS)",
+    "Dam Sire": "Lucky Owners",
+    "Price": 375000,
+    "Buyer": "Ciaron Maher Bloodstock/Ozzie Kheir/Group 1 Bloodstock (FBAA), VIC $375,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_71_photo.jpg",
+    "Price_Display": "$375,000"
+  },
+  {
+    "Lot": 72,
+    "Sire": "So You Think (NZ)",
+    "Dam": "Audacious Choice (AUS)",
+    "Dam Sire": "Redoute's Choice",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_72_photo.png",
+    "Price_Display": null
+  },
+  {
+    "Lot": 73,
+    "Sire": "Best of Bordeaux (AUS)",
+    "Dam": "Audio (AUS)",
+    "Dam Sire": "Exceed And Excel",
+    "Price": 200000,
+    "Buyer": "Dalziel Bloodstock/Moody Racing Pty Ltd, VIC $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_73_photo.jpg",
+    "Price_Display": "$200,000"
+  },
+  {
+    "Lot": 74,
+    "Sire": "Brave Smash (JPN)",
+    "Dam": "Avalon Girl (IRE)",
+    "Dam Sire": "Teofilo",
+    "Price": 80000,
+    "Buyer": "Grahame Begg Racing, VIC $80,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_74_photo.jpg",
+    "Price_Display": "$80,000"
+  },
+  {
+    "Lot": 75,
+    "Sire": "I Am Invincible (AUS)",
+    "Dam": "Avantage (AUS)",
+    "Dam Sire": "Fastnet Rock",
+    "Price": 1050000,
+    "Buyer": "Glentree Thoroughbreds/Badgers Bloodstock, VIC $1,050,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_75_photo.jpg",
+    "Price_Display": "$1,050,000"
+  },
+  {
+    "Lot": 76,
+    "Sire": "Wootton Bassett (GB)",
+    "Dam": "Avenue of Pleasure (AUS)",
+    "Dam Sire": "Street Boss",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_76_photo.png",
+    "Price_Display": null
+  },
+  {
+    "Lot": 77,
+    "Sire": "Cool Aza Beel (NZ)",
+    "Dam": "Awareness (AUS)",
+    "Dam Sire": "Exceed And Excel",
+    "Price": 160000,
+    "Buyer": "Mick Malone Bloodstock/O'Shea-Charlton Racing, NSW $160,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_77_photo.jpg",
+    "Price_Display": "$160,000"
+  },
+  {
+    "Lot": 78,
+    "Sire": "Written Tycoon (AUS)",
+    "Dam": "Away Game (AUS)",
+    "Dam Sire": "Snitzel",
+    "Price": 460000,
+    "Buyer": "Passed In $460,000 - Reserve $500,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_78_photo.jpg",
+    "Price_Display": "$460,000"
+  },
+  {
+    "Lot": 79,
+    "Sire": "Home Affairs (AUS)",
+    "Dam": "Axiomatic (AUS)",
+    "Dam Sire": "Exceed And Excel",
+    "Price": 200000,
+    "Buyer": "Waller Racing/Mulcaster Bloodstock/Champagne Fillies, NSW $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_79_photo.jpg",
+    "Price_Display": "$200,000"
+  },
+  {
+    "Lot": 80,
+    "Sire": "Capitalist (AUS)",
+    "Dam": "Baaqyah (NZ)",
+    "Dam Sire": "I Am Invincible",
+    "Price": 40000,
+    "Buyer": "Kennewell Racing/Group 1 Bloodstock (FBAA), VIC $40,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_80_photo.jpg",
+    "Price_Display": "$40,000"
+  },
+  {
+    "Lot": 81,
+    "Sire": "Toronado (IRE)",
+    "Dam": "Baby Pink (IRE)",
+    "Dam Sire": "Invincible Spirit",
+    "Price": 160000,
+    "Buyer": "Passed In $160,000 - Reserve $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_81_photo.jpg",
+    "Price_Display": "$160,000"
+  },
+  {
+    "Lot": 82,
+    "Sire": "Home Affairs (AUS)",
+    "Dam": "Back to Brussels (IRE)",
+    "Dam Sire": "Starspangledbanner",
+    "Price": 150000,
+    "Buyer": "Star Thoroughbreds/Vin Cox Bloodstock, NSW $150,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_82_photo.jpg",
+    "Price_Display": "$150,000"
+  },
+  {
+    "Lot": 83,
+    "Sire": "Profondo (AUS)",
+    "Dam": "Bad Habits (NZ)",
+    "Dam Sire": "Savabeel",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_83_photo.png",
+    "Price_Display": null
+  },
+  {
+    "Lot": 84,
+    "Sire": "Tassort (AUS)",
+    "Dam": "Balaabel (AUS)",
+    "Dam Sire": "Not a Single Doubt",
+    "Price": null,
+    "Buyer": "This lot was withdrawn",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_84_photo.png",
+    "Price_Display": null
+  },
+  {
+    "Lot": 85,
+    "Sire": "I Am Invincible (AUS)",
+    "Dam": "Ballistic Lover (AUS)",
+    "Dam Sire": "Smart Missile",
+    "Price": 600000,
+    "Buyer": "China Horse Club/Newgate Bloodstock, NSW $600,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_85_photo.jpg",
+    "Price_Display": "$600,000"
+  },
+  {
+    "Lot": 86,
+    "Sire": "Justify (USA)",
+    "Dam": "Ballynora (AUS)",
+    "Dam Sire": "Fastnet Rock",
+    "Price": 180000,
+    "Buyer": "Busuttin Racing, VIC $180,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_86_photo.jpg",
+    "Price_Display": "$180,000"
+  },
+  {
+    "Lot": 87,
+    "Sire": "Munnings (USA)",
+    "Dam": "Balzenya (USA)",
+    "Dam Sire": "Munnings",
+    "Price": 130000,
+    "Buyer": "Busuttin Racing, VIC $130,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_87_photo.jpg",
+    "Price_Display": "$130,000"
+  },
+  {
+    "Lot": 88,
+    "Sire": "Brave Smash (JPN)",
+    "Dam": "Banda Spice (AUS)",
+    "Dam Sire": "Show a Heart",
+    "Price": 100000,
+    "Buyer": "Kendrick Racing, QLD $100,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_88_photo.jpg",
+    "Price_Display": "$100,000"
+  },
+  {
+    "Lot": 89,
+    "Sire": "Maurice (JPN)",
+    "Dam": "Banksia (AUS)",
+    "Dam Sire": "Redoute's Choice",
+    "Price": 170000,
+    "Buyer": "Lees Racing/Bahen Bloodstock/Australian Bloodstock, NSW $170,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_89_photo.jpg",
+    "Price_Display": "$170,000"
+  },
+  {
+    "Lot": 90,
+    "Sire": "Farnan (AUS)",
+    "Dam": "Battle of Luxury (AUS)",
+    "Dam Sire": "Snitzel",
+    "Price": 180000,
+    "Buyer": "Passed In $180,000 - Reserve $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_90_photo.jpg",
+    "Price_Display": "$180,000"
+  },
+  {
+    "Lot": 91,
+    "Sire": "Written Tycoon (AUS)",
+    "Dam": "Beautiful Heart (AUS)",
+    "Dam Sire": "Redoute's Choice",
+    "Price": 500000,
+    "Buyer": "Ciaron Maher Bloodstock/David Redvers Bloodstock, VIC $500,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_91_photo.jpg",
+    "Price_Display": "$500,000"
+  },
+  {
+    "Lot": 92,
+    "Sire": "Cool Aza Beel (NZ)",
+    "Dam": "Bee (AUS)",
+    "Dam Sire": "Exceed And Excel",
+    "Price": 70000,
+    "Buyer": "Passed In $70,000 - Reserve $80,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_92_photo.jpg",
+    "Price_Display": "$70,000"
+  },
+  {
+    "Lot": 93,
+    "Sire": "Capitalist (AUS)",
+    "Dam": "Bella Amore (AUS)",
+    "Dam Sire": "Snitzel",
+    "Price": 160000,
+    "Buyer": "Baystone/Malua Bloodstock Pty Ltd, VIC $160,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_93_photo.jpg",
+    "Price_Display": "$160,000"
+  },
+  {
+    "Lot": 94,
+    "Sire": "Tiger of Malay (AUS)",
+    "Dam": "Bella Bee (NZ)",
+    "Dam Sire": "Savabeel",
+    "Price": 110000,
+    "Buyer": "Straight Six Racing Pty Ltd, NSW $110,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_94_photo.jpg",
+    "Price_Display": "$110,000"
+  },
+  {
+    "Lot": 95,
+    "Sire": "Street Boss (USA)",
+    "Dam": "Bella Mente (NZ)",
+    "Dam Sire": "Elusive City",
+    "Price": 320000,
+    "Buyer": "Anthony Freedman Racing/Julian Blaxland Bloodstock (FBAA), VIC $320,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_95_photo.jpg",
+    "Price_Display": "$320,000"
+  },
+  {
+    "Lot": 96,
+    "Sire": "Justify (USA)",
+    "Dam": "Bella Rosa (AUS)",
+    "Dam Sire": "Snitzel",
+    "Price": 750000,
+    "Buyer": "Gai Waterhouse & Adrian Bott/Kestrel Thoroughbreds/Marquee Bloodstock, NSW $750,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_96_photo.jpg",
+    "Price_Display": "$750,000"
+  },
+  {
+    "Lot": 97,
+    "Sire": "Jacquinot (AUS)",
+    "Dam": "Bella Sorellina (AUS)",
+    "Dam Sire": "Lope de Vega",
+    "Price": 200000,
+    "Buyer": "Munce Racing/Arthur Hoyeau, Agent, QLD $200,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_97_photo.jpg",
+    "Price_Display": "$200,000"
+  },
+  {
+    "Lot": 98,
+    "Sire": "Cool Aza Beel (NZ)",
+    "Dam": "Bellinsky (NZ)",
+    "Dam Sire": "Stravinsky",
+    "Price": 40000,
+    "Buyer": "Passed In $40,000 - Reserve $50,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_98_photo.jpg",
+    "Price_Display": "$40,000"
+  },
+  {
+    "Lot": 99,
+    "Sire": "Too Darn Hot (GB)",
+    "Dam": "Beloved (IRE)",
+    "Dam Sire": "Fastnet Rock",
+    "Price": 725000,
+    "Buyer": "China Horse Club/Newgate Bloodstock, NSW $725,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_99_photo.jpg",
+    "Price_Display": "$725,000"
+  },
+  {
+    "Lot": 100,
+    "Sire": "Pierata (AUS)",
+    "Dam": "Berimbau (AUS)",
+    "Dam Sire": "Shamardal",
+    "Price": 400000,
+    "Buyer": "David Ellis CNZM/Te Akau Racing, NEW ZEALAND $400,000",
+    "Photo_Path": "2026_gold_cost_yearling_pic/lot_100_photo.jpg",
+    "Price_Display": "$400,000"
+  }
+]

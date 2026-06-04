@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ace Breeding Prototype</title>
+
+    <!-- allow special characters, including Arabic, Chinese, Korean, Japanese, etc. -->
+    <meta charset="UTF-8">
+    <!-- link the style sheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- import p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+    <script>
+        // prevent scrolling when spacebar and arrow keys are pressed.
+        window.addEventListener("keydown", function (e) { if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) { e.preventDefault(); } }, false);
+    </script>
+</head>
+
+<body>
+    <!-- title -->
+    <div id="title-wrapper">
+        <h1 class="headline">
+            <img src="logo.png" alt="Ace Breeding Logo" class="title-logo">
+            <span class="ace-text">Ace</span> <span class="breeding-text">Breeding</span>
+        </h1>
+    </div>
+
+    <!-- main content -->
+    <div id="main-wrapper">
+        <div id="p5-canvas-container">
+            <!-- This is where your p5 sketch will be appended and appear! -->
+        </div>
+        <div class="two-columns">
+            <div class="left">
+                            <div class="service-banner-box">
+                    <img src="Yearling_Perdiction.png" alt="Yearling Perdiction Banner" class="service-banner">
+                </div>
+                <h3 class="red">Service Introduction</h3>
+                <p>Yearling Prediction is a service that helps auction buyers predict the future performance of
+                    yearlings based on their pedigree and physical traits.
+                    Buyers can offer us expected budget and preferred characteristics, and we will provide a list of
+                    recommended yearlings that best match their preferences.</p>
+                </p>
+
+                <!-- MVP DATA SOURCE DECLARATION -->
+                <div style="background: #f5f0e8; border-left: 4px solid #b5651e; padding: 10px 15px; margin: 15px 0; border-radius: 8px; font-size: 13px; color: #4a3b2c;">
+                    ⓘ <strong>MVP Data Declaration:</strong> All the data for this MVP comes from Silk Racing 2025 yearlings and Magic Millions Gold Coast 2026 yearling auction, and is only used here for MVP demonstration.
+                </div>
+
+                <div id="breeding-tool">
+                    <h3 class="green">Yearling Performance Prediction (MVP)</h3>
+                    <div class="input-group">
+                        <input type="number" id="Budget" placeholder="Enter budget($)">
+
+                        <select id="Expected distance">
+                            <option value="" disabled selected hidden>Expected distance</option>
+
+                            <option value="Sprinter">Sprinter</option>
+                            <option value="Miler">Miler</option>
+                            <option value="Middle-distance">Middle-distance</option>
+                            <option value="Stayer">Stayer</option>
+                        </select>
+
+                        <select id="Expected gender">
+                            <option value="" disabled selected hidden>Expected gender</option>
+
+                            <option value="Filly">Filly</option>
+                            <option value="Colt">Colt</option>
+                            <option value="Gelding">Gelding</option>
+                        </select>
+
+                        <!-- MVP地区筛选：仅保留日本和澳洲（Oceania） -->
+                        <select id="Produced in">
+                            <option value="" disabled selected hidden>Produced in</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+
+                        <select id="Racing region">
+                            <option value="" disabled selected hidden>Racing region</option>
+
+                            <option value="Hong Kong">Hong Kong</option>
+                            <option value="Middle East">Middle East</option>
+                            <option value="Europe">Europe</option>
+                            <option value="USA">USA</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+
+                        <button onclick="yearlingRecommendations()">Yearling Predictions</button>
+                        
+                    </div>
+
+                    <div id="recommendation-result"></div>
+                    <div id="yearling-report-container" style="display:none; margin-top: 30px;"></div>
+                </div>
+
+                <h3 class="green">Charging:</h3>
+                <p>Report fee: $20 per report and $50 for premium reports containing detailed pedigree upto 9
+                    generations.</p>
+                <p>Contract: charging each predicted stake winner 0.5% of their prize money.</p>
+            </div>
+        </div>
+        <div class="one-column">
+            <span class="yellow">What we hope to bring?</span>
+            <ul>
+                <li>Best breeding result for every mare</li>
+                <li>Save the time to find nicks for stallions</li>
+                <li>Help buyers find the most suitable yearlings under budget</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer" class="black">
+        <p>Spring 2026</p>
+    </div>
+
+    </div>
+
+    <!-- Include your sketch.js file here -->
+    <!-- 注意：yearling-prediction.js 需要与当前HTML配合使用，且其中的数据逻辑已调整为仅支持日本和澳洲 -->
+    <script src="yearling_prediction.js" type="text/javascript"> </script>
+</body>
+
+</html>
