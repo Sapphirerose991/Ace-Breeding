@@ -30,25 +30,29 @@
         <div id="p5-canvas-container">
             <!-- This is where your p5 sketch will be appended and appear! -->
         </div>
+        <h3 class="red">Service Introduction</h3>
+        <p>Yearling Prediction is a service that helps auction buyers predict the future performance of
+            yearlings based on their pedigree and physical traits.
+            Buyers can offer us expected budget and preferred characteristics, and we will provide a list of
+            recommended yearlings that best match their preferences.</p>
+        </p>
         <div class="two-columns">
             <div class="left">
-                            <div class="service-banner-box">
+                <div class="service-banner-box">
                     <img src="Yearling_Perdiction.png" alt="Yearling Perdiction Banner" class="service-banner">
                 </div>
-                <h3 class="red">Service Introduction</h3>
-                <p>Yearling Prediction is a service that helps auction buyers predict the future performance of
-                    yearlings based on their pedigree and physical traits.
-                    Buyers can offer us expected budget and preferred characteristics, and we will provide a list of
-                    recommended yearlings that best match their preferences.</p>
-                </p>
+
 
                 <!-- MVP DATA SOURCE DECLARATION -->
-                <div style="background: #f5f0e8; border-left: 4px solid #b5651e; padding: 10px 15px; margin: 15px 0; border-radius: 8px; font-size: 13px; color: #4a3b2c;">
-                    ⓘ <strong>MVP Data Declaration:</strong> All the data for this MVP comes from Silk Racing 2025 yearlings and Magic Millions Gold Coast 2026 yearling auction, and is only used here for MVP demonstration.
+                <div
+                    style="background: #f5f0e8; border-left: 4px solid #b5651e; padding: 10px 15px; margin: 15px 0; border-radius: 8px; font-size: 13px; color: #4a3b2c;">
+                    ⓘ <strong>MVP Data Declaration:</strong> All the data for this MVP comes from Silk Racing 2025
+                    yearlings and Magic Millions Gold Coast 2026 yearling auction, and is only used here for MVP
+                    demonstration.
                 </div>
 
                 <div id="breeding-tool">
-                    <h3 class="green">Yearling Performance Prediction (MVP)</h3>
+                    <h3 class="yellow">Yearling Performance Prediction (MVP)</h3>
                     <div class="input-group">
                         <input type="number" id="Budget" placeholder="Enter budget($)">
 
@@ -59,14 +63,6 @@
                             <option value="Miler">Miler</option>
                             <option value="Middle-distance">Middle-distance</option>
                             <option value="Stayer">Stayer</option>
-                        </select>
-
-                        <select id="Expected gender">
-                            <option value="" disabled selected hidden>Expected gender</option>
-
-                            <option value="Filly">Filly</option>
-                            <option value="Colt">Colt</option>
-                            <option value="Gelding">Gelding</option>
                         </select>
 
                         <!-- MVP地区筛选：仅保留日本和澳洲（Oceania） -->
@@ -88,7 +84,7 @@
                         </select>
 
                         <button onclick="yearlingRecommendations()">Yearling Predictions</button>
-                        
+
                     </div>
 
                     <div id="recommendation-result"></div>

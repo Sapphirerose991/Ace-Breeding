@@ -65,8 +65,7 @@ const AI_DISTANCE_MODEL = {
 
 // 根据种公马和性别生成默认的体型特征值
 function generateConformationFeatures(horse) {
-    const sire = horse.sire;
-    const sireDistance = horse.preferredDistance || 1600;
+    const sireDistance = horse.preferredDistanceAvg || 1600;
     const sex = horse.sex;
 
     // 基于父系距离推断体型特征
@@ -133,35 +132,35 @@ function predictLongDistanceProbability(horse) {
 function getAIAnalysis(horse) {
     const aiProbability = predictLongDistanceProbability(horse);
     const isLongDistance = aiProbability >= AI_DISTANCE_MODEL.threshold;
-    const sireDistance = horse.preferredDistance;
 
-    // 综合AI和父系信息的推荐距离
+    // 使用平均距离进行判断
+    const sireDistanceAvg = horse.preferredDistanceAvg || 1600;
+    const sireDistanceStr = horse.preferredDistance || "1600";
+
+    // 推荐距离逻辑
     let recommendedDistance;
-    let recommendationBasis;
 
-    if (isLongDistance && sireDistance >= 2000) {
-        recommendedDistance = Math.max(2000, sireDistance);
-        recommendationBasis = "AI analysis + sire history both indicate stayer potential";
-    } else if (isLongDistance && sireDistance < 2000) {
-        recommendedDistance = 2000;
-        recommendationBasis = "AI conformation suggests stayer potential despite sire's shorter profile";
-    } else if (!isLongDistance && sireDistance >= 2000) {
-        recommendedDistance = sireDistance;
-        recommendationBasis = "Sire history indicates stayer, though AI suggests shorter profile";
+    if (isLongDistance) {
+        if (sireDistanceAvg >= 2000) {
+            // 解析原始区间
+            if (sireDistanceStr.includes("-")) {
+                const maxDist = sireDistanceStr.split("-")[1];
+                recommendedDistance = `2000 - ${maxDist}`;
+            } else {
+                recommendedDistance = `2000 - ${sireDistanceStr}`;
+            }
+        } else {
+            recommendedDistance = `2000`;
+        }
     } else {
-        recommendedDistance = sireDistance;
-        recommendationBasis = "Both AI analysis and sire history suggest shorter distance preference";
+        recommendedDistance = sireDistanceStr;
     }
 
     return {
-        probability: aiProbability,
         isLongDistance: isLongDistance,
         predictedCategory: isLongDistance ? "Stayer (≥2000m)" : "Sprinter/Miler (<2000m)",
-        confidence: isLongDistance ? aiProbability : (1 - aiProbability),
         recommendedDistance: recommendedDistance,
-        recommendationBasis: recommendationBasis,
-        // 特征值 (用于调试/显示)
-        features: generateConformationFeatures(horse)
+        sireDistance: sireDistanceStr
     };
 }
 
@@ -206,31 +205,133 @@ function inferSexFromName(name) {
 
 // 辅助函数: 根据种公马推断优选距离
 function inferPreferredDistance(sire) {
-    function inferPreferredDistance(sire) {
     const sireDistances = {
-        "Kitasan Black": 2400, "Equinox": 2000, "Lord Kanaloa": 1600, "Contrail": 2000,
-        "Kizuna": 2000, "Epiphaneia": 2000, "Maurice": 1800, "Drefong": 1600,
-        "Admire Mars": 1600, "Salios": 1800, "Chrysoberyl": 1800, "Leontes": 1800,
-        "Silver State": 1800, "Rey de Oro": 2000, "Saturnalia": 2000, "Nadal": 1800,
-        "Bricks and Mortar": 1800, "Isla Bonita": 1800, "Big Arthur": 1600, "Fierement": 2000,
-        "Suave Richard": 2000, "Efforia": 2000, "Glory Vase": 2200, "Mickey Isle": 1800,
-        "Al Ain": 1800, "Le Vent Se Leve": 1800, "Pinatubo": 1600, "Orfevre": 2200,
-        "Mind Your Biscuits": 1600, "Indy Champ": 1600, "World Premiere": 2000, "Asia Express": 1600,
-        "Gold Dream": 1800, "Gold Ship": 2000, "Frankel": 2000, "Justify": 2000,
-        "Mehmas": 1200, "Tower of London": 1800, "Snitzel": 1400, "Hitotsu": 1600,
-        "Home Affairs": 1200, "Russian Revolution": 1200, "So You Think": 2000, "Wild Ruler": 1600,
-        "Pierata": 1400, "Ole Kirk": 1400, "Harry Angel": 1200, "Farnan": 1200,
-        "Written Tycoon": 1200, "Trapeze Artist": 1400, "Extreme Choice": 1200, "Super Seth": 1600,
-        "Starspangledbanner": 1400, "Brave Smash": 1600, "All Too Hard": 1600, "Spirit of Boom": 1200,
-        "Hellbent": 1200, "Stay Inside": 1600, "Capitalist": 1200, "Satono Aladdin": 1800,
-        "Profondo": 2000, "Lope de Vega": 2000, "I Am Invincible": 1200, "The Autumn Sun": 1600,
-        "Castelvecchio": 2000, "Pierro": 1600, "Anamoe": 1600, "Bivouac": 1400,
-        "Wootton Bassett": 1600, "Better Than Ready": 1200, "Toronado": 1600, "Cosmic Force": 1200,
-        "Siyouni": 1600, "Best of Bordeaux": 1400, "Jacquinot": 1400, "Cool Aza Beel": 1600,
-        "Tiger of Malay": 1400, "Street Boss": 1400, "Too Darn Hot": 1600
+        "Kitasan Black": "2000-3200",
+        "Equinox": "2000-2500",
+        "Lord Kanaloa": "1200-1600",
+        "Contrail": "2000-3000",
+        "Kizuna": "2400",
+        "Epiphaneia": "2400-3000",
+        "Maurice": "1600-2000",
+        "Drefong": "1200-1400",
+        "Admire Mars": "1600",
+        "Salios": "1600",
+        "Chrysoberyl": "1800-2000",
+        "Leontes": "1600",
+        "Silver State": "1600-2000",
+        "Rey de Oro": "2000-2400",
+        "Saturnalia": "2000",
+        "Nadal": "1800",
+        "Bricks and Mortar": "1600-2400",
+        "Isla Bonita": "2000",
+        "Big Arthur": "1200",
+        "Fierement": "3000-3200",
+        "Suave Richard": "2000-2400",
+        "Efforia": "2000-2500",
+        "Glory Vase": "2400",
+        "Mickey Isle": "1600",
+        "Al Ain": "2000",
+        "Le Vent Se Leve": "1600-2000",
+        "Pinatubo": "1400-1600",
+        "Orfevre": "2000-3000",
+        "Mind Your Biscuits": "1200",
+        "Indy Champ": "1600",
+        "World Premiere": "3000-3200",
+        "Asia Express": "1600",
+        "Gold Dream": "1600-2000",
+        "Gold Ship": "2000-3200",
+        "Frankel": "1400-2100",
+        "Justify": "1600-2400",
+        "Mehmas": "1200",
+        "Tower of London": "1200-1600",
+        "Snitzel": "1100",
+        "Hitotsu": "1600-2500",
+        "Home Affairs": "1000-1200",
+        "Russian Revolution": "1100",
+        "So You Think": "1400-2100",
+        "Wild Ruler": "1000",
+        "Pierata": "1400",
+        "Ole Kirk": "1400-1600",
+        "Harry Angel": "1200",
+        "Farnan": "1200",
+        "Written Tycoon": "1200",
+        "Trapeze Artist": "1200-1400",
+        "Extreme Choice": "1000-1200",
+        "Super Seth": "1600",
+        "Starspangledbanner": "1100-1600",
+        "Brave Smash": "1200-1400",
+        "All Too Hard": "1400-1600",
+        "Spirit of Boom": "1200-1350",
+        "Hellbent": "1200",
+        "Stay Inside": "1200",
+        "Capitalist": "1200",
+        "Satono Aladdin": "1600",
+        "Profondo": "2000",
+        "Lope de Vega": "1600-2100",
+        "I Am Invincible": "1100-1200",
+        "The Autumn Sun": "1400-2000",
+        "Castelvecchio": "1600-2000",
+        "Pierro": "1200-1600",
+        "Anamoe": "1000-2000",
+        "Bivouac": "1200-1400",
+        "Wootton Bassett": "1400",
+        "Better Than Ready": "1200",
+        "Toronado": "1600",
+        "Cosmic Force": "1200",
+        "Siyouni": "1400",
+        "Best of Bordeaux": "1100-1200",
+        "Jacquinot": "1200-1400",
+        "Cool Aza Beel": "1200",
+        "Tiger of Malay": "1200-1400",
+        "Street Boss": "1200-1400",
+        "Too Darn Hot": "1400-1600"
     };
-    
-    return sireDistances[sire] || 1600;
+    return sireDistances[sire] || "1600";
+}
+
+// 辅助函数: 根据种公马和性别获取优选距离（用于计算）
+function getPreferredDistanceForHorse(sire, sex) {
+    const distanceStr = inferPreferredDistance(sire);
+    let minDist, maxDist;
+
+    // 解析距离区间
+    if (distanceStr.includes("-")) {
+        const parts = distanceStr.split("-");
+        minDist = parseInt(parts[0]);
+        maxDist = parseInt(parts[1]);
+    } else {
+        // 单值距离
+        minDist = maxDist = parseInt(distanceStr);
+    }
+
+    // 根据性别调整
+    if (sex === "Filly") {
+        // Filly 的最大距离是 sire 的 0.8 倍
+        maxDist = Math.floor(maxDist * 0.8);
+        minDist = Math.floor(minDist * 0.8);
+        if (minDist === maxDist) {
+            return `${maxDist}`;
+        }
+        return `${minDist}-${maxDist}`;
+    }
+
+    // Colt 返回原始区间
+    return distanceStr;
+}
+
+// 获取用于匹配计算的平均距离（数字）
+function getAverageDistanceForMatching(sire, sex) {
+    const distanceStr = getPreferredDistanceForHorse(sire, sex);
+
+    if (distanceStr.includes("-")) {
+        const parts = distanceStr.split("-");
+        const minDist = parseInt(parts[0]);
+        const maxDist = parseInt(parts[1]);
+        // 返回区间中点用于匹配计算
+        return Math.floor((minDist + maxDist) / 2);
+    } else {
+        return parseInt(distanceStr);
+    }
 }
 
 // 辅助函数: 根据种公马推断近交模式
@@ -304,7 +405,8 @@ async function loadJapanDataFromJSON() {
                 damWeight: sex === "Colt" ? 480 + Math.random() * 35 : 455 + Math.random() * 30,
                 birthOrder: Math.floor(Math.random() * 4) + 1,
                 cannonCircumference: getDefaultCannonCircumference(sex, sire),
-                preferredDistance: inferPreferredDistance(sire),
+                preferredDistance: getPreferredDistanceForHorse(sire, sex),
+                preferredDistanceAvg: getAverageDistanceForMatching(sire, sex),
                 nicks: inferNicks(sire),
                 photo: photoUrl ? photoUrl.split('/').pop() : null,
                 photoUrl: photoUrl,
@@ -374,7 +476,8 @@ async function loadAustraliaDataFromJSON() {
                 damWeight: sex === "Colt" ? 500 + Math.random() * 45 : 470 + Math.random() * 40,
                 birthOrder: Math.floor(Math.random() * 5) + 1,
                 cannonCircumference: getDefaultCannonCircumference(sex, sire),
-                preferredDistance: inferPreferredDistance(sire),
+                preferredDistance: getPreferredDistanceForHorse(sire, sex),
+                preferredDistanceAvg: getAverageDistanceForMatching(sire, sex),
                 nicks: inferNicks(sire),
                 photo: photoPathValue ? photoPathValue.split('/').pop() : null,
                 photoUrl: photoPathValue,
@@ -399,8 +502,8 @@ async function loadAustraliaDataFromJSON() {
 function getFallbackJapanData() {
     console.log("使用备用日本数据");
     const horses = [
-        { name: "Log Pose", sire: "Kitasan Black", dam: "Petit Folie", damSire: "Australia", price: 437828, year: 2025, country: "Japan", surface: "Turf", sex: "Colt", damWeight: 510, birthOrder: 2, cannonCircumference: 21.2, preferredDistance: 2400, nicks: "Sunday Silence 3S × 4D", photo: "11941/0004.jpg", photoUrl: "https://www.silkhorseclub.jp/detail_gallery/city/download/11941/0004.jpg", isFirstFoal: false },
-        { name: "Les Yeux Noire", sire: "Kitasan Black", dam: "Almond Eye", damSire: "Lord Kanaloa", price: 625469, year: 2025, country: "Japan", surface: "Turf", sex: "Filly", damWeight: 480, birthOrder: 3, cannonCircumference: 20.8, preferredDistance: 2200, nicks: "Sunday Silence 3S × 4D", photo: "11939/0014.jpg", photoUrl: "https://www.silkhorseclub.jp/detail_gallery/city/download/11939/0014.jpg", isFirstFoal: false }
+        { name: "Log Pose", sire: "Kitasan Black", dam: "Petit Folie", damSire: "Australia", price: 437828, year: 2025, country: "Japan", surface: "Turf", sex: "Colt", damWeight: 510, birthOrder: 2, cannonCircumference: 21.2, preferredDistance: "2400", preferredDistanceAvg: 2400, nicks: "Sunday Silence 3S × 4D", photo: "11941/0004.jpg", photoUrl: "https://www.silkhorseclub.jp/detail_gallery/city/download/11941/0004.jpg", isFirstFoal: false },
+        { name: "Les Yeux Noire", sire: "Kitasan Black", dam: "Almond Eye", damSire: "Lord Kanaloa", price: 625469, year: 2025, country: "Japan", surface: "Turf", sex: "Filly", damWeight: 480, birthOrder: 3, cannonCircumference: 20.8, preferredDistance: "1920", preferredDistanceAvg: 1920, nicks: "Sunday Silence 3S × 4D", photo: "11939/0014.jpg", photoUrl: "https://www.silkhorseclub.jp/detail_gallery/city/download/11939/0014.jpg", isFirstFoal: false }
     ];
     for (let h of horses) {
         h.aiAnalysis = getAIAnalysis(h);
@@ -412,8 +515,8 @@ function getFallbackJapanData() {
 function getFallbackAustraliaData() {
     console.log("使用备用澳洲数据");
     const horses = [
-        { lot: "1", name: "Lot 1", sire: "Snitzel", dam: "Yesterjoy", damSire: "More Than Ready", price: 500000, year: 2026, country: "Oceania", surface: "Turf", sex: "Colt", damWeight: 535, birthOrder: 3, cannonCircumference: 21.5, preferredDistance: 1400, nicks: "Danehill 3S × 4D", photo: "lot_1_photo.jpg", photoUrl: "2026_gold_cost_yearling_pic/lot_1_photo.jpg", isFirstFoal: false },
-        { lot: "3", name: "Lot 3", sire: "Home Affairs", dam: "Yumi", damSire: "Lonhro", price: 300000, year: 2026, country: "Oceania", surface: "Turf", sex: "Filly", damWeight: 500, birthOrder: 2, cannonCircumference: 20.4, preferredDistance: 1200, nicks: "Fastnet Rock 4S × 4D", photo: "lot_3_photo.jpg", photoUrl: "2026_gold_cost_yearling_pic/lot_3_photo.jpg", isFirstFoal: false }
+        { lot: "1", name: "Lot 1", sire: "Snitzel", dam: "Yesterjoy", damSire: "More Than Ready", price: 500000, year: 2026, country: "Oceania", surface: "Turf", sex: "Colt", damWeight: 535, birthOrder: 3, cannonCircumference: 21.5, preferredDistance: "1100", preferredDistanceAvg: 1100, nicks: "Danehill 3S × 4D", photo: "lot_1_photo.jpg", photoUrl: "2026_gold_cost_yearling_pic/lot_1_photo.jpg", isFirstFoal: false },
+        { lot: "3", name: "Lot 3", sire: "Home Affairs", dam: "Yumi", damSire: "Lonhro", price: 300000, year: 2026, country: "Oceania", surface: "Turf", sex: "Filly", damWeight: 500, birthOrder: 2, cannonCircumference: 20.4, preferredDistance: "800-960", preferredDistanceAvg: 880, nicks: "Fastnet Rock 4S × 4D", photo: "lot_3_photo.jpg", photoUrl: "2026_gold_cost_yearling_pic/lot_3_photo.jpg", isFirstFoal: false }
     ];
     for (let h of horses) {
         h.aiAnalysis = getAIAnalysis(h);
@@ -459,9 +562,9 @@ function getPhotoUrl(horse, region) {
 }
 
 // ==========================================================================
-// 2. 筛选与排序算法 - 预算内价格越高越优先
+// 2. 筛选与排序算法 - 修复距离权重失效、实现按距离严选并按价格降序
 // ==========================================================================
-async function fetchFilteredAndSortedYearlings(region, budget, targetDistance, expectedGender = null) {
+async function fetchFilteredAndSortedYearlings(region, budget, targetDistance) {
     let resolvedRegion = null;
     const cleanedRegion = region.trim().toLowerCase();
 
@@ -472,35 +575,72 @@ async function fetchFilteredAndSortedYearlings(region, budget, targetDistance, e
     const regionList = REAL_YEARLING_DATABASE[resolvedRegion] || [];
     if (regionList.length === 0) return [];
 
+    // 第一步：初筛基础预算
     let filteredList = regionList.filter(horse => horse.price <= budget);
     if (filteredList.length === 0) return [];
 
-    const mappedList = filteredList.map(horse => {
-        let matchScore = 0;
-        const priceRatio = horse.price / budget;
-        matchScore += priceRatio * 100;
-
-        const distDelta = Math.abs(horse.preferredDistance - targetDistance);
-        const distancePenalty = Math.min(20, (distDelta / 100) * 7);
-        matchScore -= distancePenalty;
-
-        if (expectedGender && expectedGender !== "any" && expectedGender !== "" && horse.sex !== expectedGender) {
-            matchScore -= 30;
+    // 辅助函数：根据目标核心距离(targetDistance)，定义其严格能接受的距离上下限
+    // Sprinter (1200m) -> 允许 1000m-1400m
+    // Miler (1600m) -> 允许 1400m-1700m (包含部分长短英里)
+    // Middle-distance (2000m) -> 允许 1700m-2300m
+    // Stayer (2400m) -> 允许 2300m 及以上
+    function isDistanceMatch(horseAvg, target) {
+        if (target <= 1300) { // Sprinter
+            return horseAvg >= 1000 && horseAvg <= 1450;
+        } else if (target > 1300 && target <= 1700) { // Miler
+            return horseAvg > 1400 && horseAvg <= 1750;
+        } else if (target > 1700 && target <= 2100) { // Middle-distance
+            return horseAvg > 1700 && horseAvg <= 2300;
+        } else { // Stayer (>=2400m)
+            return horseAvg >= 2300;
         }
+    }
+
+    // 第二步：打分与分类
+    const mappedList = filteredList.map(horse => {
+        const horseAvg = horse.preferredDistanceAvg || 1600;
+
+        // 判断是否符合该类别的距离区间
+        const perfectDistanceMatch = isDistanceMatch(horseAvg, targetDistance);
+
+        // 核心得分设计逻辑：
+        // 1. 如果距离吻合，基础分给 10000 分，确保跨维度压制不符合距离的马
+        // 2. 在距离吻合的池子里，价格越高（越接近预算），附加分越高
+        // 3. 如果是第一胎，扣减微量分数作为软性避坑参考
+        let baseScore = perfectDistanceMatch ? 10000 : 0;
+
+        // 距离的绝对偏离度连续惩罚（用于同级内的平滑微调）
+        const distDelta = Math.abs(horseAvg - targetDistance);
+        const distanceFineTunePenalty = (distDelta / 100) * 5;
+
+        // 价格加成项：价格越高越靠前 (price / budget 范围在 0 ~ 1)
+        const priceBonus = (horse.price / budget) * 100;
+
+        let matchScore = baseScore + priceBonus - distanceFineTunePenalty;
 
         if (horse.isFirstFoal === true) {
-            matchScore -= 5;
+            matchScore -= 2; // 微量惩罚
         }
 
-        const finalScore = Math.max(0, Math.min(100, matchScore));
-        return { ...horse, finalMatchScore: finalScore };
+        // 用于前端卡片显示的百分比：计算它在符合条件池子里的相对平滑百分比
+        let displayMatchPercent = 50 + ((horse.price / budget) * 45);
+        if (!perfectDistanceMatch) {
+            displayMatchPercent = Math.max(10, 45 - (distDelta / 20)); // 不合距离的显示低匹配度
+        }
+
+        return {
+            ...horse,
+            finalMatchScore: matchScore, // 供底层逻辑精确定序使用
+            displayMatchScore: Math.min(99, Math.floor(displayMatchPercent)) // 供前端卡片UI渲染漂亮数值
+        };
     });
 
-    return mappedList.sort((a, b) => b.finalMatchScore - a.finalMatchScore);
+    // 第三步：排序（finalMatchScore高的在前）
+    return mappedList.sort((a, b) => b.finalMatchScore - a.achScore ? b.finalMatchScore - a.finalMatchScore : b.finalMatchScore - a.finalMatchScore);
 }
 
 // ==========================================================================
-// 3. 核心报告渲染引擎
+// 3. 核心报告渲染引擎 (已修复 Sire's Distance 区间和绿条溢出问题)
 // ==========================================================================
 async function yearlingRecommendations() {
     if (REAL_YEARLING_DATABASE["Japan"].length === 0 && REAL_YEARLING_DATABASE["Oceania"].length === 0) {
@@ -593,7 +733,23 @@ async function yearlingRecommendations() {
         const w2 = Math.floor(horse.damWeight * (isFirstFoal ? 0.91 : 0.95));
         const w3 = Math.floor(horse.damWeight * (isStructuralSurge ? 1.02 : (isFirstFoal ? 0.96 : 1.00)));
 
-        const distancePercent = Math.min(95, Math.max(5, ((horse.preferredDistance - 1000) / 1400) * 100));
+        const avgDistance = horse.preferredDistanceAvg || 1600;
+
+        // 🌟 核心修改 1：直接获取该父系的真实原始区间文本 (如 "2400-3000")，避免被 Filly 的逻辑缩减为单值
+        const rawSireDistance = inferPreferredDistance(horse.sire);
+        const displaySireDistanceRange = rawSireDistance.includes('m') ? rawSireDistance : rawSireDistance + 'm';
+
+        // 计算进度条位置：0-2400m 映射到 0-100%
+        let distancePercent = ((avgDistance - 1000) / 1400) * 100;
+        distancePercent = Math.min(95, Math.max(5, distancePercent));
+
+        // 🌟 核心修改 2：精密计算绿条左侧起点，防止向左溢出，并配合下方的 overflow: hidden 完美闭环
+        let highlightLeft = Math.max(0, distancePercent - 12);
+        if (highlightLeft + 24 > 100) {
+            highlightLeft = 76; // 强行锁死最大右边界
+        }
+
+        const dotLeftPercent = distancePercent;
 
         let riskProfile = "Low Risk - Standard Development";
         let riskColor = "#2A9D8F";
@@ -638,8 +794,8 @@ async function yearlingRecommendations() {
         const y3Min = getY(w3 - 18);
         const y3Max = getY(w3 + 18);
 
-        const aiProbPercent = (ai.probability * 100).toFixed(0);
         const aiColor = ai.isLongDistance ? '#E63946' : '#2A9D8F';
+        const displayDistance = horse.preferredDistance ? horse.preferredDistance + 'm' : 'N/A';
 
         const horseHTML = `
             <div class="analysis-card" style="margin-bottom: 40px; padding: 25px; border-radius: 20px; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #e0d6cc;">
@@ -658,7 +814,7 @@ async function yearlingRecommendations() {
                             <h3 style="margin: 0; font-size: 1.5rem; color: #2c2b28;">#${i + 1}: ${horseName}</h3>
                             <div style="display: flex; gap: 10px; align-items: center;">
                                 <span class="badge" style="background: #f0e7de; padding: 4px 12px; border-radius: 20px;">${horse.sex}</span>
-                                <span style="background: #2A9D8F; color: white; padding: 4px 14px; border-radius: 20px; font-weight: bold;">Match: ${horse.finalMatchScore.toFixed(0)}%</span>
+                                <span style="background: #2A9D8F; color: white; padding: 4px 14px; border-radius: 20px; font-weight: bold;">Match: ${horse.displayMatchScore}%</span>
                             </div>
                         </div>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
@@ -667,7 +823,7 @@ async function yearlingRecommendations() {
                                 <p><strong>Dam:</strong> ${horse.dam}</p>
                                 <p><strong>Dam Sire:</strong> ${horse.damSire}</p>
                                 <p><strong>Price:</strong> <span style="color: ${priceColor}; font-weight: bold;">$${horse.price.toLocaleString()}</span> / Budget: $${budget.toLocaleString()}</p>
-                                <p><strong>Sire Distance:</strong> ${horse.preferredDistance}m</p>
+                                <p><strong>Sire Distance:</strong> ${displaySireDistanceRange}</p>
                                 <p><strong>Inbreeding:</strong> ${horse.nicks}</p>
                             </div>
                             <div>
@@ -678,88 +834,92 @@ async function yearlingRecommendations() {
                             </div>
                         </div>
                         
-                        <!-- AI 体型分析模块 -->
                         <div style="background: linear-gradient(135deg, #f7f9fc 0%, #eef2f7 100%); padding: 14px; border-radius: 12px; margin-top: 15px; border-left: 4px solid ${aiColor};">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                <strong style="font-size: 14px;">🤖 AI Conformation Analysis (Logistic Regression)</strong>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <strong style="font-size: 14px;">🤖 AI Conformation Analysis</strong>
                                 <span style="background: ${aiColor}; color: white; padding: 3px 12px; border-radius: 20px; font-size: 11px; font-weight: bold;">${ai.predictedCategory}</span>
                             </div>
                             
-                            <!-- 概率条 -->
-                            <div style="margin-bottom: 12px;">
-                                <div style="display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 3px;">
-                                    <span>Sprinter</span>
-                                    <span>Miler</span>
-                                    <span>Stayer →</span>
-                                </div>
-                                <div style="background: #ddd; border-radius: 10px; height: 10px; overflow: hidden;">
-                                    <div style="width: ${aiProbPercent}%; background: ${aiColor}; height: 100%; transition: width 0.3s ease;"></div>
-                                </div>
-                                <div style="text-align: center; margin-top: 5px;">
-                                    <span style="font-size: 12px; font-weight: bold; color: ${aiColor};">Stayer Probability: ${aiProbPercent}%</span>
-                                    <span style="font-size: 10px; color: #666; margin-left: 8px;">(Confidence: ${(ai.confidence * 100).toFixed(0)}%)</span>
-                                </div>
-                            </div>
-                            
-                            <!-- 推荐距离 -->
-                            <div style="background: white; border-radius: 8px; padding: 10px; margin-top: 5px;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <span style="font-size: 12px; font-weight: bold;">🎯 AI Recommended Distance:</span>
+                            <div style="background: white; border-radius: 8px; padding: 12px; margin-bottom: 8px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                    <span style="font-size: 12px; font-weight: bold;">🎯 AI Predicted Distance:</span>
                                     <span style="font-size: 16px; font-weight: bold; color: ${aiColor};">${ai.recommendedDistance}m</span>
                                 </div>
-                                <p style="font-size: 9px; color: #666; margin: 6px 0 0 0; line-height: 1.3;">
-                                    📋 ${ai.recommendationBasis}
-                                </p>
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-size: 12px; font-weight: bold;">🐎 Sire's Distance Range:</span>
+                                    <span style="font-size: 14px; font-weight: bold; color: #b5651e;">${displaySireDistanceRange}</span>
+                                </div>
                             </div>
                             
-                            <p style="font-size: 9px; color: #888; margin: 8px 0 0 0; text-align: center;">
-                                ℹ️ Based on logistic regression model (19 conformation features) | Threshold: ${AI_DISTANCE_MODEL.threshold}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ddd;">
-                    <div style="margin-bottom: 20px;">
-                        <strong>Optimum Distance Range:</strong>
-                        <div style="position: relative; height: 6px; background: #e0e0e0; border-radius: 3px; margin-top: 8px;">
-                            <div style="position: absolute; left: ${Math.max(0, distancePercent - 12)}%; width: 24%; height: 100%; background: rgba(42,157,143,0.25); border-radius: 3px;"></div>
-                            <div style="position: absolute; left: ${distancePercent}%; top: -5px; width: 14px; height: 14px; background: #2A9D8F; border-radius: 50%;"></div>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; font-size: 11px; margin-top: 5px;">
-                            <span>1000m (Sprint)</span>
-                            <span style="color: #2A9D8F; font-weight: bold;">${horse.preferredDistance}m</span>
-                            <span>2400m+ (Classic)</span>
-                        </div>
-                    </div>
-                    
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
-                        <div style="background: #FDF5E6; padding: 12px; border-radius: 10px;">
-                            <strong>📈 Growth Trajectory:</strong>
-                            <svg viewBox="0 0 300 65" style="width: 100%; height: auto; margin-top: 8px;">
-                                <polygon points="35,${y1Max} 150,${y2Max} 265,${y3Max} 265,${y3Min} 150,${y2Min} 35,${y1Min}" fill="rgba(218,165,32,0.2)" />
-                                <path d="M35,${y1} L150,${y2} L265,${y3}" fill="none" stroke="#DAA520" stroke-width="2.5" />
-                                <circle cx="35" cy="${y1}" r="4" fill="#DAA520" stroke="white" stroke-width="1.5" />
-                                <circle cx="150" cy="${y2}" r="4" fill="#E63946" stroke="white" stroke-width="1.5" />
-                                <circle cx="265" cy="${y3}" r="4" fill="#2A9D8F" stroke="white" stroke-width="1.5" />
-                                <text x="35" y="${y1 - 6}" font-size="8" text-anchor="middle" fill="#333" font-weight="bold">${w1}kg</text>
-                                <text x="150" y="${y2 - 6}" font-size="8" text-anchor="middle" fill="#E63946" font-weight="bold">${w2}kg</text>
-                                <text x="265" y="${y3 - 6}" font-size="8" text-anchor="middle" fill="#2A9D8F" font-weight="bold">${w3}kg</text>
-                            </svg>
-                            <div style="display: flex; justify-content: space-between; font-size: 9px; color: #888; margin-top: 5px;">
-                                <span>Yearling</span>
-                                <span>2YO Juvenile</span>
-                                <span>3YO Classic</span>
+                           <div style="margin-top: 8px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 3px;">
+                                <span>Sprinter</span>
+                                <span>Miler</span>
+                                <span>Stayer →</span>
                             </div>
-                            <p style="font-size: 10px; color: #666; margin: 8px 0 0 0;">
-                                ${isFirstFoal ? "⚠️ First foal: growth may be slightly delayed" : (isStructuralSurge ? "📈 Late maturing: expect post-2YO development" : "Standard growth pattern")}
+                            <div style="position: relative; margin: 12px 12px;">
+                                
+                                <div style="height: 8px; background: #e0e0e0; border-radius: 4px; position: relative; overflow: hidden;">
+                                    <div style="position: absolute; left: ${highlightLeft}%; width: 24%; height: 100%; background: rgba(42,157,143,0.3); border-radius: 4px;"></div>
+                                </div>
+                                
+                                <div style="position: absolute; 
+                                            left: ${dotLeftPercent}%; 
+                                            top: 50%; 
+                                            transform: translate(-50%, -50%); 
+                                            width: 14px; 
+                                            height: 14px; 
+                                            background: #2A9D8F; 
+                                            border-radius: 50%; 
+                                            border: 2px solid white; 
+                                            box-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+                                            z-index: 10;">
+                                </div>
+                                
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 10px; margin-top: 5px; padding: 0 8px;">
+                                <span>1000m</span>
+                                <span style="color: #2A9D8F; font-weight: bold;">${displaySireDistanceRange}</span>
+                                <span>2400m+</span>
+                            </div>
+                            <p style="font-size: 9px; color: #666; margin: 8px 0 0 0; text-align: center;">
+                                📋 Optimum distance based on sire history: ${displaySireDistanceRange}
                             </p>
                         </div>
-                        <div style="background: #e8f5e9; padding: 12px; border-radius: 10px;">
-                            <strong>💰 Bidding Strategy</strong>
-                            <p style="margin: 8px 0 0 0; font-size: 14px;">List Price: <strong>$${horse.price.toLocaleString()}</strong></p>
-                            <p style="margin: 5px 0 0 0; font-size: 14px; color: #2A9D8F;">Suggested Max: <strong>$${estCeilingPrice.toLocaleString()}</strong></p>
-                            <p style="margin: 8px 0 0 0; font-size: 12px; color: #666;">Projected Height: ${finalHeight} hh | Grade: ${scoreCurrent}/10 → ${scoreThreeYo}/10</p>
+                                                    
+                            <p style="font-size: 8px; color: #aaa; margin: 8px 0 0 0; text-align: center;">
+                                Based on logistic regression model (19 conformation features)
+                            </p>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                            <div style="background: #FDF5E6; padding: 12px; border-radius: 10px;">
+                                <strong>📈 Growth Trajectory:</strong>
+                                <svg viewBox="0 0 300 65" style="width: 100%; height: auto; margin-top: 8px;">
+                                    <polygon points="35,${y1Max} 150,${y2Max} 265,${y3Max} 265,${y3Min} 150,${y2Min} 35,${y1Min}" fill="rgba(218,165,32,0.2)" />
+                                    <path d="M35,${y1} L150,${y2} L265,${y3}" fill="none" stroke="#DAA520" stroke-width="2.5" />
+                                    <circle cx="35" cy="${y1}" r="4" fill="#DAA520" stroke="white" stroke-width="1.5" />
+                                    <circle cx="150" cy="${y2}" r="4" fill="#E63946" stroke="white" stroke-width="1.5" />
+                                    <circle cx="265" cy="${y3}" r="4" fill="#2A9D8F" stroke="white" stroke-width="1.5" />
+                                    <text x="35" y="${y1 - 6}" font-size="8" text-anchor="middle" fill="#333" font-weight="bold">${w1}kg</text>
+                                    <text x="150" y="${y2 - 6}" font-size="8" text-anchor="middle" fill="#E63946" font-weight="bold">${w2}kg</text>
+                                    <text x="265" y="${y3 - 6}" font-size="8" text-anchor="middle" fill="#2A9D8F" font-weight="bold">${w3}kg</text>
+                                </svg>
+                                <div style="display: flex; justify-content: space-between; font-size: 9px; color: #888; margin-top: 5px;">
+                                    <span>Yearling</span>
+                                    <span>2YO Juvenile</span>
+                                    <span>3YO Classic</span>
+                                </div>
+                                <p style="font-size: 10px; color: #666; margin: 8px 0 0 0;">
+                                    ${isFirstFoal ? "⚠️ First foal: growth may be slightly delayed" : (isStructuralSurge ? "📈 Late maturing: expect post-2YO development" : "Standard growth pattern")}
+                                </p>
+                            </div>
+                            <div style="background: #e8f5e9; padding: 12px; border-radius: 10px;">
+                                <strong>💰 Bidding Strategy</strong>
+                                <p style="margin: 8px 0 0 0; font-size: 14px;">List Price: <strong>$${horse.price.toLocaleString()}</strong></p>
+                                <p style="margin: 5px 0 0 0; font-size: 14px; color: #2A9D8F;">Suggested Max: <strong>$${estCeilingPrice.toLocaleString()}</strong></p>
+                                <p style="margin: 8px 0 0 0; font-size: 12px; color: #666;">Projected Height: ${finalHeight} hh | Grade: ${scoreCurrent}/10 → ${scoreThreeYo}/10</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -768,8 +928,3 @@ async function yearlingRecommendations() {
         reportContainer.innerHTML += horseHTML;
     }
 }
-
-// 页面加载时自动初始化
-(async function () {
-    await initRealDatabase();
-})();
